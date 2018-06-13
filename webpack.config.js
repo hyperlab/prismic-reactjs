@@ -1,19 +1,19 @@
 var webpack = require('webpack'),
     path = require('path'),
     yargs = require('yargs');
- 
+
 var libraryName = 'PrismicReactjs',
     fileName = 'prismic-reactjs',
     plugins = [],
     outputFile;
- 
+
 if (yargs.argv.p) {
   plugins.push(new webpack.optimize.UglifyJsPlugin({ minimize: true }));
   outputFile = fileName + '.min.js';
 } else {
   outputFile = fileName + '.js';
 }
- 
+
 var config = {
   entry: [
     __dirname + '/src/index.js'
@@ -47,9 +47,10 @@ var config = {
     extensions: ['.js']
   },
   externals: {
-  'react': 'react'
+  'react': 'react',
+  'prismic-richtext': 'prismic-richtext'
   },
   plugins: plugins
 };
- 
+
 module.exports = config;

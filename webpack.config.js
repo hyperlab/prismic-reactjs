@@ -47,9 +47,10 @@ var config = {
     extensions: ['.js']
   },
   externals: {
-  'react': 'react'
+  'react': 'react',
+  'prismic-richtext': 'prismic-richtext'
   },
   plugins: plugins
 };
- 
+
 module.exports = config;
